@@ -1,5 +1,6 @@
 import React from "react";
 import "./HeroSection.css";
+import { Link } from "react-router-dom";
 const HeroSection = () => {
   return (
     <div className="relative h-screen flex items-center justify-center bg-gradient-to-r from-black to-gray-900">
@@ -38,9 +39,13 @@ const HeroSection = () => {
 
         {/* Buttons */}
         <div className="mt-6 flex items-center justify-center space-x-4">
-          <button className="bg-orange-500 hover:bg-orange-600 text-white font-semibold py-3 px-6 rounded-lg">
-            Watch trailer
-          </button>
+          <Link key={58567}
+          to={`/anime/58567`}
+          >
+            <button className="bg-orange-500 hover:bg-orange-600 text-white font-semibold py-3 px-6 rounded-lg">
+              Watch trailer
+            </button>
+          </Link>
           <button className="bg-gray-700 hover:bg-gray-800 text-white py-3 px-4 rounded-lg">
             <svg
               xmlns="http://www.w3.org/2000/svg"
