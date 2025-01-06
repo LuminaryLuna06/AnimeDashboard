@@ -1,20 +1,22 @@
 import React from "react";
 
-function Cards(link, title, rating, episodes) {
+function Cards({title, rating, episodes, description, aired, image}) {
   return (
-    <div className="flex flex-col gap-2 lg:w-1/6 w-1/3 mx-2 relative container">
-      <img src="https://picsum.photos/200/300" alt="" className="w-full" />
+    <div className="flex flex-col gap-2 md:w-[30%] lg:w-[15%] w-[45%] mx-2 py-2 relative container">
+      <img src={image} alt="" className="aspect-[2/3]" />
       <div className="overlay">
-        <div className="text">
-          <h1>Anime Title</h1>
-          <p className="text-md">⭐ 9.5</p>
-          <p className="text-sm">24 Episodes</p>
-          <p className="text-sm">Descriptions</p>
+        <div className="text flex-col">
+          <h1>{title}</h1>
+          <p className="text-sm">⭐ {rating}</p>
+          <p className="text-sm">{episodes} Episodes</p>
+          <p className="text-sm">{description}</p>
         </div>
       </div>
       <div>
-        <h1>Anime Title</h1>
-        <p>⭐ 9.5 - 🗓 2025</p>
+        <h1>{title}</h1>
+        <p>
+          ⭐ {rating} - 🗓 {aired}
+        </p>
       </div>
     </div>
   );
