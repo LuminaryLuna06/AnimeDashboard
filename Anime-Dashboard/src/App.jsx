@@ -9,7 +9,7 @@ import "./App.css";
 
 function App() {
   return (
-    <div className="text-gray-200">
+    <div className="text-gray-200 bg-black">
       <NavBar />
       <Routes>
         <Route path="/" element={<Home />} />

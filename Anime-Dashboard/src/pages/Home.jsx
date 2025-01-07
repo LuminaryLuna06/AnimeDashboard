@@ -3,6 +3,7 @@ import Cards from "../components/Cards";
 import axios from "axios";
 import HeroSection from "../components/HomePage/HeroSection";
 import { Link } from "react-router-dom";
+import UpcomingAnime from "../components/AnimePage/UpcomingAnime";
 
 function Home() {
   const [animes, setAnimes] = useState([]);
@@ -24,18 +25,19 @@ function Home() {
   console.log(animes);
   return (
     <>
+      {/* HeroSection */}
       <HeroSection />
+
       <div className="w-[95%] mx-auto">
-        {/* HeroSection */}
-        <div className="py-4 w-[]">
+        <div className="py-4 ">
+          {/* Trending */}
           <div className="py-4">
-            <h1 className="text-3xl">Trending Anime</h1>
+            <h1 className="text-4xl">⭐Trending Anime⭐</h1>
             <p className="text-md text-gray-400">
               Find the best new and continuing simulcasts here!
             </p>
           </div>
 
-          {/* Trending */}
           <div className="flex flex-wrap items-start ">
             {animes.map((anime) => (
               <Cards
@@ -49,16 +51,21 @@ function Home() {
               />
             ))}
           </div>
+        </div>
+      </div>
+      {/* Banner */}
+      <div className="my-5">
+        <Link key={48549} to={`/anime/48549`}>
+          <img
+            src="https://imgsrv.crunchyroll.com/cdn-cgi/image/fit=contain,format=auto,quality=85,width=2700/CurationAssets/Dr%20STONE%20/SEASON%203/MARKETING%20BANNER/DrSTONE-S3-KV1-Banner-2100x700-EN.png"
+            alt="Dr.Stone"
+          />
+        </Link>
+      </div>
 
-          {/* Banner */}
-          <div className="my-5">
-            <Link key={48549} to={`/anime/48549`}>
-              <img
-                src="https://imgsrv.crunchyroll.com/cdn-cgi/image/fit=contain,format=auto,quality=85,width=2700/CurationAssets/Dr%20STONE%20/SEASON%203/MARKETING%20BANNER/DrSTONE-S3-KV1-Banner-2100x700-EN.png"
-                alt="Dr.Stone"
-              />
-            </Link>
-          </div>
+      <div className="w-[95%] mx-auto">
+        <div className="py-4 ">
+          <UpcomingAnime />
         </div>
       </div>
     </>

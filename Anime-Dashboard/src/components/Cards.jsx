@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 function Cards({ title, rating, episodes, description, aired, image, id }) {
   return (
-    <div className="flex flex-col gap-2 md:w-[30%] lg:w-[15%] w-[45%] mx-auto py-2 relative container">
+    <div className="flex flex-col md:w-[30%] lg:w-[15%] w-[45%] mx-auto py-2 relative container">
       <Link key={id} to={`/anime/${id}`}>
         <img src={image} alt="" className="aspect-[2/3]" />
         <div className="overlay">
@@ -14,7 +14,7 @@ function Cards({ title, rating, episodes, description, aired, image, id }) {
             <p className="text-sm">{description}</p>
           </div>
         </div>
-        <div>
+        <div className="my-2">
           <h1>{title}</h1>
           <p>
             ⭐ {rating} - 🗓 {aired}
