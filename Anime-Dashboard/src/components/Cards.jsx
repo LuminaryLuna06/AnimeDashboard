@@ -9,9 +9,10 @@ function Cards({ title, rating, episodes, description, aired, image, id }) {
         <div className="overlay">
           <div className="text flex-col">
             <h1>{title}</h1>
-            <p className="text-sm">⭐ {rating}</p>
-            <p className="text-sm">{episodes} Episodes</p>
-            <p className="text-sm">{description}</p>
+            <p className="text-sm">
+              ⭐ {rating} - {episodes} Episodes
+            </p>
+            <p className="text-sm my-2">{description}</p>
           </div>
         </div>
         <div className="my-2">

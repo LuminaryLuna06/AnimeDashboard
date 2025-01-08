@@ -7,13 +7,14 @@ import {
   PolarAngleAxis,
   PolarRadiusAxis,
   ResponsiveContainer,
+  Tooltip,
 } from "recharts";
 
 function AnimeCompletionChart() {
   const [completion, setCompletion] = useState([]);
   useEffect(() => {
     axios
-      .get("https://api.jikan.moe/v4/anime/54857/statistics")
+      .get("https://api.jikan.moe/v4/anime/52991/statistics")
       .then((res) => setCompletion(res.data.data))
       .catch((err) => console.log(err));
     console.log(completion);
@@ -21,15 +22,16 @@ function AnimeCompletionChart() {
 
   const completionData = [
     { name: "Watching", count: completion.watching },
-    { name: "Completed", count: completion.completed },
+    { name: "Complete", count: completion.completed },
     { name: "Dropped", count: completion.dropped },
-    { name: "Plan to Watch", count: completion.plan_to_watch },
+    { name: "Planned", count: completion.plan_to_watch },
   ];
   return (
     <ResponsiveContainer width="100%" height={500}>
-      <h1 className="font-bold text-3xl">User watched</h1>
+      <h1 className="font-bold text-3xl my-4 text-center">User watched</h1>
       <RadarChart cx="50%" cy="50%" outerRadius="80%" data={completionData} >
         <PolarGrid />
+        <Tooltip content={<CustomTooltip />}/>
         <PolarAngleAxis dataKey="name"/>
         {/* <PolarRadiusAxis /> */}
         <Radar
@@ -46,23 +48,16 @@ function AnimeCompletionChart() {
 
 export default AnimeCompletionChart;
 
-// function customTick({ payload, x, y, textAnchor, stroke, radius }) {
-//   return (
-//     <g
-//       className="recharts-layer recharts-polar-angle-axis-tick"
-//     >
-//       <text
-//         radius={radius}
-//         stroke={stroke}
-//         x={x}
-//         y={y}
-//         className="recharts-text recharts-polar-angle-axis-tick-value"
-//         text-anchor={textAnchor}
-//       >
-//         <tspan x={x} dy="0em">
-//           {payload.value}
-//         </tspan>
-//       </text>
-//     </g>
-//   );
-// }
+const CustomTooltip = ({ active, payload, label }) => {
+  if (active && payload && payload.length) {
+    return (
+      <div className="p-4 bg-slate-900 flex flex-col gap-4 rounded-md">
+        <p className="text-medium text-lg">{label}</p>
+        <p className="text-sm text-pink-400">
+          Users:
+          <span className="ml-2">{payload[0].value}</span>
+        </p>
+      </div>
+    );
+  }
+};

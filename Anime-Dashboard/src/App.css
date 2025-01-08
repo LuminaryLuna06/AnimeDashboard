@@ -1,6 +1,3 @@
-/* Styles for buttons, background, and alignment */
-
-
 .overlay {
   position: absolute;
   top: 0;
@@ -22,10 +19,9 @@
 }
 
 .container {
-    position: relative;
-  }
+  position: relative;
+}
 
-  .container:hover .overlay {
-    opacity: 0.9;
-  }
-  
+.container:hover .overlay {
+  opacity: 0.9;
+}

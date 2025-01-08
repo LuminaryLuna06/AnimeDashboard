@@ -17,7 +17,8 @@ function SearchAnime() {
         params: {
           q: `${query}`,
           limit: 6,
-          sort: "asc",
+          sfw:true,
+          
         },
       })
       .then((res) => setAnimes(res.data.data))
@@ -69,9 +70,7 @@ function SearchAnime() {
         </div>
       </form>
 
-      {!search ? (
-        null
-      ) : (
+      {!search ? null : (
         <div className="mx-auto">
           <div className="my-3 ">
             <h1 className="font-bold text-3xl py-3">Your search results:</h1>

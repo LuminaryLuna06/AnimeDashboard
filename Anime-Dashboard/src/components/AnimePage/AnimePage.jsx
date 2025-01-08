@@ -44,13 +44,13 @@ function AnimePage() {
                   : "unknown"}
                 &nbsp; - &nbsp;
                 {anime?.episodes ?? "N/A"} eps &nbsp; - ⭐ {anime?.score}
-                &nbsp; - 🏆 top #{anime?.popularity}
+                &nbsp; - 🏆 top #{anime?.rank}
               </p>
               <div className="flex flex-row gap-2">
                 {anime?.genres?.map((genre, index) => (
                   <div
                     key={index}
-                    className="badge badge-secondary badge-outline"
+                    className="badge border-pink-400 text-pink-400 badge-outline"
                   >
                     {genre.name}
                   </div>
@@ -59,7 +59,7 @@ function AnimePage() {
                 )}
               </div>
               <p className="font-thin mt-3 text-left">
-                {anime?.synopsis.slice(0, 500)}...
+                {anime?.synopsis}...
               </p>
             </div>
           </div>

@@ -3,7 +3,7 @@ import "./HeroSection.css";
 import { Link } from "react-router-dom";
 const HeroSection = () => {
   return (
-    <div className="relative h-screen flex items-center justify-center bg-gradient-to-r from-black to-gray-900">
+    <div className="relative h-[94vh] flex items-center justify-center bg-gradient-to-r from-black to-gray-900">
       {/* Background Image */}
       <div className="absolute inset-0">
         <img
@@ -42,7 +42,7 @@ const HeroSection = () => {
           <Link key={58567}
           to={`/anime/58567`}
           >
-            <button className="bg-orange-500 hover:bg-orange-600 text-white font-semibold py-3 px-6 rounded-lg">
+            <button className="hover:bg-pink-300  border border-2 border-pink-300 text-white font-semibold py-3 px-6 rounded-lg">
               Watch trailer
             </button>
           </Link>

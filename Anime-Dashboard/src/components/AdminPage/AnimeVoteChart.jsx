@@ -16,14 +16,14 @@ function AnimeVoteChart() {
   const [votes, setVotes] = useState([]);
   useEffect(() => {
     axios
-      .get("https://api.jikan.moe/v4/anime/54857/statistics")
+      .get("https://api.jikan.moe/v4/anime/52991/statistics")
       .then((res) => setVotes(res.data.data.scores))
       .catch((err) => console.log(err));
     console.log(votes);
   }, []);
   return (
     <>
-      <h1 className="font-bold text-3xl my-5">User votes</h1>
+      <h1 className="font-bold text-3xl my-5 text-center">User votes</h1>
       <ResponsiveContainer
         width="100%"
         height={400}
@@ -62,7 +62,7 @@ const CustomTooltip = ({ active, payload, label }) => {
     return (
       <div className="p-4 bg-slate-900 flex flex-col gap-4 rounded-md">
         <p className="text-medium text-lg">{label} ⭐</p>
-        <p className="text-sm text-blue-400">
+        <p className="text-sm text-pink-400">
           Vote:
           <span className="ml-2">{payload[0].value}</span>
         </p>
