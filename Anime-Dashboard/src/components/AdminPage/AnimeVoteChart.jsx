@@ -24,7 +24,11 @@ function AnimeVoteChart() {
   return (
     <>
       <h1 className="font-bold text-3xl my-5">User votes</h1>
-      <ResponsiveContainer width="100%" height={400} style={{marginTop:"4px", marginBottom:"4px"}}>
+      <ResponsiveContainer
+        width="100%"
+        height={400}
+        style={{ marginTop: "4px", marginBottom: "4px" }}
+      >
         <BarChart
           width={500}
           height={300}
@@ -36,10 +40,9 @@ function AnimeVoteChart() {
             bottom: 5,
           }}
         >
-          <CartesianGrid strokeDasharray="3 3" />
           <XAxis dataKey="score" />
           <YAxis />
-          <Tooltip />
+          <Tooltip content={<CustomTooltip />} />
           <Legend />
           <Bar
             dataKey="votes"
@@ -53,3 +56,17 @@ function AnimeVoteChart() {
 }
 
 export default AnimeVoteChart;
+
+const CustomTooltip = ({ active, payload, label }) => {
+  if (active && payload && payload.length) {
+    return (
+      <div className="p-4 bg-slate-900 flex flex-col gap-4 rounded-md">
+        <p className="text-medium text-lg">{label} ⭐</p>
+        <p className="text-sm text-blue-400">
+          Vote:
+          <span className="ml-2">{payload[0].value}</span>
+        </p>
+      </div>
+    );
+  }
+};

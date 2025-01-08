@@ -1,7 +1,11 @@
 import React, { useEffect, useState } from "react";
+import axios from "axios";
+
 import AnimeVoteChart from "../components/AdminPage/AnimeVoteChart";
 import AnimeCompletionChart from "../components/AdminPage/AnimeCompletionChart";
-import axios from "axios";
+import HorizontalBarChart from "../components/AdminPage/HorizontalBarChart";
+
+
 function Admin() {
   const [anime, setAnime] = useState([]);
   useEffect(() => {
@@ -37,6 +41,8 @@ function Admin() {
         <AnimeVoteChart />
         {/* <AnimeCompletionChart /> */}
         <AnimeCompletionChart />
+
+        {/* <HorizontalBarChart /> */}
       </div>
     </>
   );

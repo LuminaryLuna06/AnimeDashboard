@@ -28,10 +28,10 @@ function AnimeCompletionChart() {
   return (
     <ResponsiveContainer width="100%" height={500}>
       <h1 className="font-bold text-3xl">User watched</h1>
-      <RadarChart cx="50%" cy="50%" outerRadius="80%" data={completionData}>
+      <RadarChart cx="50%" cy="50%" outerRadius="80%" data={completionData} >
         <PolarGrid />
-        <PolarAngleAxis dataKey="name" />
-        <PolarRadiusAxis />
+        <PolarAngleAxis dataKey="name"/>
+        {/* <PolarRadiusAxis /> */}
         <Radar
           name="Data"
           dataKey="count"
@@ -45,3 +45,24 @@ function AnimeCompletionChart() {
 }
 
 export default AnimeCompletionChart;
+
+// function customTick({ payload, x, y, textAnchor, stroke, radius }) {
+//   return (
+//     <g
+//       className="recharts-layer recharts-polar-angle-axis-tick"
+//     >
+//       <text
+//         radius={radius}
+//         stroke={stroke}
+//         x={x}
+//         y={y}
+//         className="recharts-text recharts-polar-angle-axis-tick-value"
+//         text-anchor={textAnchor}
+//       >
+//         <tspan x={x} dy="0em">
+//           {payload.value}
+//         </tspan>
+//       </text>
+//     </g>
+//   );
+// }

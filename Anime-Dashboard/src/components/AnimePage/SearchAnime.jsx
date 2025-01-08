@@ -70,7 +70,7 @@ function SearchAnime() {
       </form>
 
       {!search ? (
-        ""
+        null
       ) : (
         <div className="mx-auto">
           <div className="my-3 ">

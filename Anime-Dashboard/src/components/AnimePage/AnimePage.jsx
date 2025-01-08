@@ -21,7 +21,7 @@ function AnimePage() {
         <p>Loading...</p>
       ) : (
         <>
-          <div className="w-full lg:w-[60%] md:w-[80%]  h-[100vh] mx-auto mt-5">
+          <div className="w-full lg:w-[60%] md:w-[80%]  h-full mx-auto mt-5">
             <figure className="aspect-[16/9]">
               <iframe
                 className="w-full h-full"
@@ -44,7 +44,7 @@ function AnimePage() {
                   : "unknown"}
                 &nbsp; - &nbsp;
                 {anime?.episodes ?? "N/A"} eps &nbsp; - ⭐ {anime?.score}
-                &nbsp; - 🏆 top {anime?.popularity}
+                &nbsp; - 🏆 top #{anime?.popularity}
               </p>
               <div className="flex flex-row gap-2">
                 {anime?.genres?.map((genre, index) => (
