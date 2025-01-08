@@ -6,6 +6,7 @@ import Admin from "./pages/Admin";
 import AnimePage from "./components/AnimePage/AnimePage";
 import { Routes, Route } from "react-router-dom";
 import "./App.css";
+import Footer from "./components/Footer";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
         <Route path="/anime" element={<Anime />} />
         <Route path="/admin" element={<Admin />} />
       </Routes>
+      <Footer />
     </div>
   );
 }
