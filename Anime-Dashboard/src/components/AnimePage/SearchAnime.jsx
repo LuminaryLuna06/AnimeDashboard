@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import Cards from "../Cards";
+import Cards from "../Common/Cards";
 
 function SearchAnime() {
   const [search, setSearch] = useState([]);
@@ -17,8 +17,7 @@ function SearchAnime() {
         params: {
           q: `${query}`,
           limit: 6,
-          sfw:true,
-          
+          sfw: true,
         },
       })
       .then((res) => setAnimes(res.data.data))
@@ -76,15 +75,7 @@ function SearchAnime() {
             <h1 className="font-bold text-3xl py-3">Your search results:</h1>
             <div className="flex flex-wrap items-start ">
               {animes.map((anime) => (
-                <Cards
-                  image={anime.images.webp.large_image_url}
-                  title={anime.title}
-                  rating={anime.score}
-                  episodes={anime.episodes}
-                  description={`${anime.synopsis?.slice(0, 150)}...`}
-                  aired={anime.year}
-                  id={anime.mal_id}
-                />
+                <Cards key={anime.mal_id} props={anime} />
               ))}
             </div>
           </div>

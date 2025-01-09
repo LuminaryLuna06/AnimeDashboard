@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import UpcomingAnime from "../components/AnimePage/UpcomingAnime";
+import UpcomingAnime from "../components/HomePage/UpcomingAnime";
 import SearchAnime from "../components/AnimePage/SearchAnime";
 import TopAnime from "../components/AnimePage/TopAnime";
 

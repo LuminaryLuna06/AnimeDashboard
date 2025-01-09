@@ -12,8 +12,8 @@ function AnimePage() {
       .then((response) => {
         setAnime(response.data.data);
       })
-      .catch((err) => console.err(err));
-  }, []);
+      .catch((err) => console.log(err));
+  }, [id]);
 
   return (
     <>

@@ -1,13 +1,15 @@
 import React from "react";
-import "./HeroSection.css";
 import { Link } from "react-router-dom";
+import Button from "../Common/Button";
+
 const HeroSection = () => {
   return (
-    <div className="relative h-[94vh] flex items-center justify-center bg-gradient-to-r from-black to-gray-900">
+    <div className="relative md:h-screen h-[600px] flex items-center justify-center bg-gradient-to-r from-black to-gray-900">
       {/* Background Image */}
       <div className="absolute inset-0">
         <img
-          src="https://preview.redd.it/official-solo-leveling-season-2-key-visual-wallpaper-v0-goqp4kgqh3pd1.png?width=2048&format=png&auto=webp&s=5dc245787247215e52960a373440db0069014811" // Replace with your actual image URL
+          // src="https://preview.redd.it/official-solo-leveling-season-2-key-visual-wallpaper-v0-goqp4kgqh3pd1.png?width=2048&format=png&auto=webp&s=5dc245787247215e52960a373440db0069014811"
+          src="hero.webp"
           alt="Hero Background"
           className="object-cover w-full h-full opacity-50 object-left"
         />
@@ -20,13 +22,9 @@ const HeroSection = () => {
           <img
             src="https://imgsrv.crunchyroll.com/cdn-cgi/image/fit=contain,format=auto,quality=85,width=600/CurationAssets/Solo%20Leveling/SEASON%202/ULTRA-WIDE/SoloLeveling-S2-KV1-UW-Logo.png"
             alt=""
-            className="lg:w-[60%] md:w-[60%]"
+            className="md:w-[60%] w-[80%]"
           />
         </div>
-        {/* <h1 className="text-6xl font-bold uppercase tracking-wide">
-          Solo Leveling
-        </h1>
-        <p className="mt-2 text-xl">- Arise From The Shadow -</p> */}
 
         {/* Description */}
         <p className="mt-4 text-lg leading-relaxed">
@@ -39,13 +37,7 @@ const HeroSection = () => {
 
         {/* Buttons */}
         <div className="mt-6 flex items-center justify-center space-x-4">
-          <Link key={58567}
-          to={`/anime/58567`}
-          >
-            <button className="hover:bg-pink-300  border border-2 border-pink-300 text-white font-semibold py-3 px-6 rounded-lg">
-              Watch trailer
-            </button>
-          </Link>
+          <Button content={"Watch Trailer"} link={"/anime/58567"} />
           <button className="bg-gray-700 hover:bg-gray-800 text-white py-3 px-4 rounded-lg">
             <svg
               xmlns="http://www.w3.org/2000/svg"

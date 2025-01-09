@@ -4,6 +4,7 @@ import AnimeVoteChart from "./AnimeVoteChart";
 import AnimeCompletionChart from "./AnimeCompletionChart";
 import { Link } from "react-router-dom";
 import Reviews from "./Reviews";
+import Button from "../Common/Button";
 
 function SousouNoFrieren() {
   const [anime, setAnime] = useState([]);
@@ -29,6 +30,7 @@ function SousouNoFrieren() {
               alt="Top #1 anime image"
             />
           </div>
+
           {/* Right */}
           <div className="lg:w-1/2 md:w-full mx-auto flex flex-col">
             {/* Title */}
@@ -52,13 +54,16 @@ function SousouNoFrieren() {
                 <div className="badge badge-secondary badge-outline">N/A</div>
               )}
             </div>
+
             {/* Statistic */}
             <div className="flex  bg-gradient-to-r from-gray-800 ">
               {/* Score */}
               <div className=" text-center my-4 mx-3 ">
                 <p className="bg-pink-500 rounded text-white text-sm">SCORE</p>
                 <h1 className="text-2xl text-white">{anime.score}</h1>
-                <p className="text-[10px] text-gray-300">571,829 users</p>
+                <p className="text-[10px] text-gray-300">
+                  {anime.scored_by?.toLocaleString()} users
+                </p>
               </div>
 
               {/* Ranking */}
@@ -71,24 +76,18 @@ function SousouNoFrieren() {
                   <span className="font-bold">#{anime.popularity}</span>
                 </h2>
                 <h2>
-                  Favourites <span className="font-bold">59,827</span>
+                  Favorites{" "}
+                  <span className="font-bold">
+                    {anime.favorites?.toLocaleString()}
+                  </span>
                 </h2>
               </div>
             </div>
 
-            <Link
-              className="my-5 w-fit"
-              key={anime.mal_id}
-              to={`/anime/${anime.mal_id}`}
-            >
-              <button className="border border-pink-400 rounded p-3 my-5  hover:bg-pink-400 hover:border-gray-500">
-                Watch Trailer
-              </button>
-            </Link>
-
+            <Button content={"Watch Trailer"} link={`/anime/${anime.mal_id}`} />
             <hr />
-            {/* Infomation */}
 
+            {/* Infomation */}
             <div className="my-5">
               <div>
                 <h2 className="font-bold">Synopsis</h2>
