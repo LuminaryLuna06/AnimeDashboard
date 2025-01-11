@@ -61,9 +61,9 @@ function NavBar() {
         </ul>
       </div>
       <div className="navbar-end">
-        <a className="btn" href="/admin">
+        <Link to={"/admin"} className="btn ">
           Admin
-        </a>
+        </Link>
       </div>
     </div>
   );

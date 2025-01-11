@@ -8,10 +8,12 @@ import Footer from "./components/Common/Footer";
 import Home from "./pages/Home";
 import Anime from "./pages/Anime";
 import Dashboard from "./pages/Dashboard";
-import AnimePage from "./components/AnimePage/AnimePage";
 import Genres from "./pages/Genres";
+import Admin from "./pages/Admin";
 
 import "./App.css";
+
+import AnimePage from "./components/AnimePage/AnimePage";
 import GenresPage from "./components/GenresPage/GenresPage";
 
 function App() {
@@ -26,6 +28,7 @@ function App() {
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/genres" element={<Genres />} />
           <Route path="/genres/:genreId/:genreName" element={<GenresPage />} />
+          <Route path="/admin" element={<Admin />} />
         </Routes>
       </SkeletonTheme>
       <Footer />
