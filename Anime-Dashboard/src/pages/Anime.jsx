@@ -4,6 +4,8 @@ import SearchAnime from "../components/AnimePage/SearchAnime";
 import TopAnime from "../components/AnimePage/TopAnime";
 
 function Anime() {
+  window.scrollTo(0, 0);
+
   return (
     <>
       <div className="w-[95%] mx-auto">

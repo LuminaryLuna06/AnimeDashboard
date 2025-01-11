@@ -24,7 +24,7 @@ function NavBar() {
           </div>
           <ul
             tabIndex={0}
-            className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow text-neutral"
+            className="menu menu-sm dropdown-content text-gray-200 bg-gradient-to-r from-slate-800 to-black rounded-box z-[1] mt-3 w-52 p-2 shadow "
           >
             <li>
               <Link to={"/"}>Home</Link>
@@ -36,7 +36,7 @@ function NavBar() {
               <Link to={"/dashboard"}>Dashboard</Link>
             </li>
             <li>
-              <Link to={"/genre"}>Genres</Link>
+              <Link to={"/genres"}>Genres</Link>
             </li>
           </ul>
         </div>
@@ -45,7 +45,7 @@ function NavBar() {
         </Link>
       </div>
       <div className="navbar-center hidden md:flex">
-        <ul className="menu menu-horizontal px-1 text-lg ">
+        <ul className="menu menu-horizontal px-1 text-lg">
           <li>
             <Link to={"/"}>Home</Link>
           </li>
@@ -56,7 +56,7 @@ function NavBar() {
             <Link to={"/dashboard"}>Dashboard</Link>
           </li>
           <li>
-            <Link to={"/genre"}>Genres</Link>
+            <Link to={"/genres"}>Genres</Link>
           </li>
         </ul>
       </div>

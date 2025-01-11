@@ -8,6 +8,7 @@ import Button from "../Common/Button";
 
 function SousouNoFrieren() {
   const [anime, setAnime] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
   useEffect(() => {
     axios
       .get("https://api.jikan.moe/v4/top/anime", {
@@ -16,9 +17,14 @@ function SousouNoFrieren() {
         },
       })
       .then((response) => setAnime(response.data.data[0]))
-      .catch((err) => console.log(err));
-    console.log(anime);
+      .catch((err) => console.log(err))
+      .finally(() => setIsLoading(false));
   }, []);
+
+  if (isLoading) {
+    return <div className="h-[100vh]"></div>;
+  }
+
   return (
     <>
       <div className="lg:w-[80%] w-[90%] mx-auto animate-fadeIn">

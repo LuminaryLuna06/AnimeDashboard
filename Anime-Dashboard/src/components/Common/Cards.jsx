@@ -1,17 +1,18 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import Skeleton from 'react-loading-skeleton'
-import 'react-loading-skeleton/dist/skeleton.css'
+import "react-loading-skeleton/dist/skeleton.css";
 
-function Cards({props}) {
+function Cards({ props }) {
   return (
-    <div className="flex flex-col md:w-[30%] lg:w-[15%] w-[45%] mx-auto py-2 relative container">
+    <div className="flex flex-col md:w-[30%] lg:w-[15%] w-[45%] mx-auto py-2 relative container animate-fadeIn">
       <Link key={props.mal_id} to={`/anime/${props.mal_id}`}>
-        <img
-          src={props.images?.webp?.large_image_url}
-          alt=""
-          className="aspect-[2/3]"
-        />
+        <div className="aspect-[2/3] flex">
+          <img
+            src={props.images?.webp?.large_image_url}
+            alt=""
+            className="aspect-[2/3] object-cover"
+          />
+        </div>
         <div className="overlay">
           <div className="text flex-col">
             <h1>{props.title}</h1>

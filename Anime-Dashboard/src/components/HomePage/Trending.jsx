@@ -25,7 +25,7 @@ function Trending() {
 
 
   return (
-    <div className="w-[95%] lg:h-[600px] mx-auto">
+    <div className="w-[95%] h-auto mx-auto">
       <div className="py-4 ">
         <div className="py-4">
           <h1 className="text-4xl">⭐Trending Anime⭐</h1>

@@ -6,6 +6,8 @@ import UpcomingAnime from "../components/HomePage/UpcomingAnime";
 import Trending from "../components/HomePage/Trending";
 
 function Home() {
+  window.scrollTo(0, 0);
+
   return (
     <>
       {/* HeroSection */}

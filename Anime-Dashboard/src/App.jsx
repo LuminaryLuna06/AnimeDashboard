@@ -9,8 +9,10 @@ import Home from "./pages/Home";
 import Anime from "./pages/Anime";
 import Dashboard from "./pages/Dashboard";
 import AnimePage from "./components/AnimePage/AnimePage";
+import Genres from "./pages/Genres";
 
 import "./App.css";
+import GenresPage from "./components/GenresPage/GenresPage";
 
 function App() {
   return (
@@ -22,6 +24,8 @@ function App() {
           <Route path="/anime/:id" element={<AnimePage />} />
           <Route path="/anime" element={<Anime />} />
           <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/genres" element={<Genres />} />
+          <Route path="/genres/:genreId/:genreName" element={<GenresPage />} />
         </Routes>
       </SkeletonTheme>
       <Footer />

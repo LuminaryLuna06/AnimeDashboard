@@ -5,20 +5,23 @@ import { useParams } from "react-router-dom";
 function AnimePage() {
   const { id } = useParams();
   const [anime, setAnime] = useState();
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
+    window.scrollTo(0, 0)
     axios
       .get(`https://api.jikan.moe/v4/anime/${id}`)
       .then((response) => {
         setAnime(response.data.data);
       })
-      .catch((err) => console.log(err));
+      .catch((err) => console.log(err))
+      .finally(() => setIsLoading(false));
   }, [id]);
 
   return (
     <>
-      {!anime ? (
-        <p>Loading...</p>
+      {isLoading ? (
+        <div className="h-[100vh]"></div>
       ) : (
         <>
           <div className="w-full lg:w-[60%] md:w-[80%]  h-full mx-auto mt-5">
@@ -58,9 +61,7 @@ function AnimePage() {
                   <div className="badge badge-secondary badge-outline">N/A</div>
                 )}
               </div>
-              <p className="font-thin mt-3 text-left">
-                {anime?.synopsis}...
-              </p>
+              <p className="font-thin mt-3 text-left">{anime?.synopsis}...</p>
             </div>
           </div>
         </>
