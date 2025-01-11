@@ -1,6 +1,6 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import Review from "./Review";
+import ReviewCard from "./ReviewCard";
 
 function Reviews() {
   const [reviews, setReviews] = useState([]);
@@ -21,7 +21,7 @@ function Reviews() {
       <div className="border border-gray-700 p-4">
         <h1 className="font-bold text-3xl">Reviews</h1>
         {reviews.map((review) => (
-          <Review props={review} />
+          <ReviewCard props={review} />
         ))}
       </div>
     </>

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import Cards from "../Common/Cards";
-import Loading from "../Common/Loading";
+import CardSkeleton from "../Loading/CardSkeleton";
 
 function Trending() {
   const [animes, setAnimes] = useState([]);
@@ -23,11 +23,9 @@ function Trending() {
       .finally(() => setIsLoading(false));
   }, []);
 
-  if (isLoading) {
-    return <Loading />;
-  }
+
   return (
-    <div className="w-[95%] lg:h-auto mx-auto animate-fadeIn">
+    <div className="w-[95%] lg:h-[600px] mx-auto">
       <div className="py-4 ">
         <div className="py-4">
           <h1 className="text-4xl">⭐Trending Anime⭐</h1>
@@ -37,9 +35,11 @@ function Trending() {
         </div>
 
         <div className="flex flex-wrap items-start ">
-          {animes.map((anime) => (
-            <Cards key={anime.mal_id} props={anime} />
-          ))}
+          {isLoading ? (
+            <CardSkeleton cards={6}/>
+          ) : (
+            animes.map((anime) => <Cards key={anime.mal_id} props={anime} />)
+          )}
         </div>
       </div>
     </div>

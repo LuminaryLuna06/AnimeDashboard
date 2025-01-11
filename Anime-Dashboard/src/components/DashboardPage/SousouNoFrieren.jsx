@@ -21,7 +21,7 @@ function SousouNoFrieren() {
   }, []);
   return (
     <>
-      <div className="lg:w-[80%] w-[90%] mx-auto">
+      <div className="lg:w-[80%] w-[90%] mx-auto animate-fadeIn">
         <div className="flex flex-col gap-5 lg:flex-row">
           {/* Left */}
           <div className="">

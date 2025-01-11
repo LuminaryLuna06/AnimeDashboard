@@ -1,10 +1,13 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import Cards from "../Common/Cards";
+import CardSkeleton from "../Loading/CardSkeleton";
 
 function SearchAnime() {
   const [search, setSearch] = useState([]);
   const [animes, setAnimes] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
+  const [searched, setSearched] = useState(false);
 
   // Search
   function HandleSearch(e) {
@@ -21,7 +24,11 @@ function SearchAnime() {
         },
       })
       .then((res) => setAnimes(res.data.data))
-      .catch((err) => console.log(err));
+      .catch((err) => console.log(err))
+      .finally(() => {
+        setIsLoading(false);
+        setSearched(true);
+      });
   }
 
   return (
@@ -69,14 +76,18 @@ function SearchAnime() {
         </div>
       </form>
 
-      {!search ? null : (
+      {!searched ? null : (
         <div className="mx-auto">
           <div className="my-3 ">
             <h1 className="font-bold text-3xl py-3">Your search results:</h1>
             <div className="flex flex-wrap items-start ">
-              {animes.map((anime) => (
-                <Cards key={anime.mal_id} props={anime} />
-              ))}
+              {isLoading ? (
+                <CardSkeleton cards={6} />
+              ) : (
+                animes.map((anime) => (
+                  <Cards key={anime.mal_id} props={anime} />
+                ))
+              )}
             </div>
           </div>
         </div>

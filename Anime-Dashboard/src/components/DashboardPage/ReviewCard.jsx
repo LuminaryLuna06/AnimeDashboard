@@ -1,6 +1,6 @@
 import React from "react";
 
-function Review({ props }) {
+function ReviewCard({ props }) {
   return (
     <div className="flex flex-col my-5 border border-pink-300 p-3">
       <div className="flex flex-row gap-3 my-3">
@@ -18,4 +18,4 @@ function Review({ props }) {
   );
 }
 
-export default Review;
+export default ReviewCard;
