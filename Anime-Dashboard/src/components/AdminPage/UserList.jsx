@@ -21,7 +21,7 @@ function UserList() {
           <div className="w-[80%] mx-auto my-4 flex">
             <h1 className="font-bold text-3xl">User Information</h1>
           </div>
-          <div className="md:w-[80%] w-[95%] mx-auto border rounded">
+          <div className="md:w-[80%] w-[95%] mx-auto border rounded my-4">
             <table className="table">
               <thead>
                 <tr className="text-white">
