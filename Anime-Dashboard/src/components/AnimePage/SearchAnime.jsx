@@ -69,7 +69,7 @@ function SearchAnime() {
           />
           <button
             type="submit"
-            className="text-white absolute end-2.5 bottom-2.5 bg-pink-500 hover:bg-pink-600   font-medium rounded-lg text-sm px-4 py-2"
+            className="text-white absolute end-2.5 bottom-2.5 bg-pink-400 hover:bg-pink-300   font-medium rounded-lg text-sm px-4 py-2"
           >
             Search
           </button>

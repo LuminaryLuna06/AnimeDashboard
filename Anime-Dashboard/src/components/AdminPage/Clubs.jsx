@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Club from "../Common/Club";
 import axios from "axios";
+import ClubSkeleton from "../Loading/ClubSkeleton";
 
 function Clubs() {
   const [clubs, setClubs] = useState([]);
@@ -18,7 +19,7 @@ function Clubs() {
       <div className="w-[95%] md:w-[80%] mx-auto">
         <h1 className="font-bold text-3xl my-3">Clubs</h1>
         {isLoading ? (
-          <div className="h-[600px]"></div>
+          <ClubSkeleton cards={4} />
         ) : (
           clubs.map((club) => <Club club={club} />)
         )}

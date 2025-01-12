@@ -11,7 +11,6 @@ function UserList() {
       .catch((err) => console.log(err))
       .finally(() => setIsLoading(false));
   }, []);
-  console.log(users);
 
   return (
     <>
@@ -34,20 +33,22 @@ function UserList() {
               <tbody>
                 {users.map((user) => (
                   <tr className="hover:bg-gray-500">
-                    <a
-                      href={`https://myanimelist.net/profile/${user.username}`}
-                    >
-                      <td>
-                        <div className="flex items-center gap-3">
-                          <img
-                            src={user.images.webp.image_url}
-                            alt=""
-                            className="rounded-full object-cover w-10 h-10"
-                          />
-                          {user.username}
-                        </div>
-                      </td>
-                    </a>
+                    <div>
+                      <a
+                        href={`https://myanimelist.net/profile/${user.username}`}
+                      >
+                        <td>
+                          <div className="flex items-center gap-3">
+                            <img
+                              src={user.images.webp.image_url}
+                              alt=""
+                              className="rounded-full object-cover w-10 h-10"
+                            />
+                            {user.username}
+                          </div>
+                        </td>
+                      </a>
+                    </div>
 
                     <td>handsomeuser@gmail.com</td>
                     <td>
